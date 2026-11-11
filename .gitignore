@@ -1,0 +1,21 @@
+# Environment / secrets
+.env
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Data and judge scores come from the v1.0 release archive, not git
+/data/
+/results/
+agora-data-*.zip
+
+# IDE / OS
+.DS_Store
+*.swp
+
+# Logs
+*.log

@@ -1,0 +1,41 @@
+[project]
+name = "gold-standard-diagnosis"
+version = "0.1.0"
+requires-python = ">=3.13"
+dependencies = [
+    "crowd-kit>=1.4.0",
+    "pymc>=5.25.0",
+    "numpyro>=0.17.0",
+    "jax[cpu]>=0.4.35",
+    "arviz>=0.19.0,<1.0.0",
+    "krippendorff>=0.7.0",
+    "scipy>=1.14.0",
+    "datasets>=3.0.0",
+    "openai>=1.50.0",
+    "anthropic>=0.40.0",
+    "google-genai>=1.0.0",
+    "jinja2>=3.1.0",
+    "pandas>=2.2.0",
+    # Transitive via crowd-kit/datasets. Floored only so the resolver picks a release with
+    # prebuilt wheels: older pyarrow builds from source and needs cmake, which fails on a
+    # stock machine.
+    "pyarrow>=19",
+    "matplotlib>=3.9.0",
+    "seaborn>=0.13.0",
+    "pydantic>=2.9.0",
+    "pyyaml>=6.0",
+    "python-dotenv>=1.0.0",
+    "optax>=0.2.8",
+    "torch>=2.12.0",
+    "transformers>=5.5.4",
+    "sentencepiece>=0.2.1",
+    "fire>=0.7.1",
+    "cvxpy>=1.9.2",
+]
+
+[tool.uv]
+dev-dependencies = ["pytest>=8.0.0", "pytest-asyncio>=0.24.0"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+asyncio_mode = "strict"
